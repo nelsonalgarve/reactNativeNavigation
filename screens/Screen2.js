@@ -1,10 +1,15 @@
 import { Pressable, StyleSheet, Text } from 'react-native';
 
-export default function Screen2(props) {
-	const { navigate } = props.navigation;
+export default function Screen2({ navigation, route }) {
+	const { navigate } = navigation;
+
+	console.log(route);
+	const { name } = route.params;
+	// console.log(name);
+
 	return (
 		<Pressable style={styles.container} onPress={() => navigate('Screen1')}>
-			<Text>Screen2</Text>
+			<Text>Hello {name}</Text>
 		</Pressable>
 	);
 }

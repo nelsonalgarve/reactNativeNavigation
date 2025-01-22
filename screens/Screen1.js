@@ -7,7 +7,7 @@ export default function Screen1(props) {
 		<Pressable
 			style={styles.container}
 			onPress={() => {
-				props.navigation.navigate('Screen2', { name: 'Screen 2' });
+				props.navigation.navigate('Screen2', { name: 'Nelson' });
 			}}
 		>
 			<Text>Screen1</Text>
