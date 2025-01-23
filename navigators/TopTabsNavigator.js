@@ -10,7 +10,7 @@ export default function ToptabsNavigator() {
 	return (
 		<Tab.Navigator
 			screenOptions={{
-				tabBarStyle: { paddingTop: insets.top },
+				// tabBarStyle: { paddingTop: insets.top },
 				tabBarPressColor: 'violet',
 				tabBarIndicatorStyle: {
 					backgroundColor: 'violet',

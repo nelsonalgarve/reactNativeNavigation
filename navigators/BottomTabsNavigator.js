@@ -3,8 +3,9 @@ import Feather from '@expo/vector-icons/Feather';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Screen1 from '../screens/Screen1';
 import Screen3 from '../screens/Screen3';
+import StackNavigator from './StackNavigator';
+import ToptabsNavigator from './TopTabsNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -13,6 +14,7 @@ export default function BottomTabsNavigator() {
 	return (
 		<Tab.Navigator
 			screenOptions={{
+				headerShown: false,
 				headerShadowVisible: false,
 				headerTitleAlign: 'center',
 				headerStyle: { backgroundColor: '#f5f5f5' },
@@ -33,11 +35,12 @@ export default function BottomTabsNavigator() {
 		>
 			<Tab.Screen
 				name="Home"
-				component={Screen1}
+				component={StackNavigator}
 				options={{
 					tabBarIcon: ({ color }) => (
 						<AntDesign name="home" size={28} color={color} />
 					),
+					headerShown: false,
 				}}
 			/>
 			<Tab.Screen
@@ -47,6 +50,16 @@ export default function BottomTabsNavigator() {
 				options={{
 					tabBarIcon: ({ color }) => (
 						<Feather name="settings" size={28} color={color} />
+					),
+				}}
+			/>
+			<Tab.Screen
+				name="Articles"
+				initialParams={{ name: '' }}
+				component={ToptabsNavigator}
+				options={{
+					tabBarIcon: ({ color }) => (
+						<AntDesign name="paperclip" size={28} color={color} />
 					),
 				}}
 			/>

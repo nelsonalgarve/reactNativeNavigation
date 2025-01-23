@@ -11,6 +11,7 @@ export default function StackNavigator() {
 	return (
 		<Stack.Navigator
 			screenOptions={{
+				headerShown: false,
 				headerTitleAlign: 'center',
 				headerStyle: { backgroundColor: '#f5f5f5' },
 				headerTitleStyle: { fontWeight: 'bold', color: 'blue' },
@@ -21,13 +22,13 @@ export default function StackNavigator() {
 				component={Screen1}
 				options={({ navigation }) => ({
 					title: 'Home',
-					headerRight: () => (
-						<Pressable
-							onPress={() => navigation.navigate('Screen2', { name: 'Nelson' })}
-						>
-							<AntDesign name="user" size={24} color="black" />
-						</Pressable>
-					),
+					// headerRight: () => (
+					// 	<Pressable
+					// 		onPress={() => navigation.navigate('Screen2', { name: 'Nelson' })}
+					// 	>
+					// 		<AntDesign name="user" size={24} color="black" />
+					// 	</Pressable>
+					// ),
 				})}
 			/>
 			<Stack.Screen
